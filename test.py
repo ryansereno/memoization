@@ -60,16 +60,17 @@ def canSum(targetSum, numbers, memo = {}):
 print(canSum(705,[5,5,5]))
 
 
-def howSum(targetSum, numbers):
+def howSum(targetSum, numbers, memo = []):
     if targetSum == 0:
         return []
     if targetSum < 0:
         return None
     for i in numbers:
         remainder = targetSum - i
-        remainderResult = canSum(remainder, numbers)
+        remainderResult = howSum(remainder, numbers, memo)
         if remainderResult != None:
-            return remainderResult[i]
+            return remainderResult + [i]
+    return None
 
 print('\n' +  'howSum Function:')
-print(howSum(155, [5,5,3]))
+print(howSum(1, [4,4,3]))
