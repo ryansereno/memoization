@@ -78,3 +78,24 @@ def howSum(targetSum, numbers, memo = {}):
 
 print('\n' +  'howSum Function:')
 print(howSum(304, [7,7,7]))
+
+def bestSum(targetSum, numbers):
+    if targetSum == 0:
+        return []
+    if targetSum < 0:
+        return None
+    shortestCombination = None
+    for i in numbers:
+        remainder = targetSum - i
+        remainderCombination = bestSum(remainder, numbers)
+        if remainderCombination != None:
+            combination = remainderCombination + [i]
+            if shortestCombination == None or len(combination) < len(shortestCombination):
+                shortestCombination = combination
+    return shortestCombination
+
+
+print('\n' +  'besttSum Function:')
+print(bestSum(5,[2,1,6]))
+
+
