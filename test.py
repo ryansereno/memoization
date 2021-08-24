@@ -101,4 +101,16 @@ def bestSum(targetSum, numbers, memo = {}):
 print('\n' +  'besttSum Function:')
 print(bestSum(50,[2,3,6]))
 
+def canConstruct(target, wordBank):
+    if target == '':
+        return True
+    for word in wordBank:
+        if target.find(word) == 0:
+            suffix = target[len(word):]
+            if canConstruct(suffix, wordBank) == True:
+                return True
+    return False
 
+
+print('\n' + 'canConstruct: ')
+print(canConstruct('abstract', ['abs', 'str', 'ct', 'tr', 'a']))
