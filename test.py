@@ -101,13 +101,16 @@ def bestSum(targetSum, numbers, memo = {}):
 print('\n' +  'besttSum Function:')
 print(bestSum(50,[2,3,6]))
 
-def canConstruct(target, wordBank):
+def canConstruct(target, wordBank, memo = {}):
+    if target in memo:
+        return True
     if target == '':
         return True
     for word in wordBank:
         if target.find(word) == 0:
             suffix = target[len(word):]
-            if canConstruct(suffix, wordBank) == True:
+            if canConstruct(suffix, wordBank, memo) == True:
+                memo[target] == True
                 return True
     return False
 
