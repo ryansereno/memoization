@@ -118,3 +118,20 @@ def canConstruct(target, wordBank, memo = {}):
 
 print('\n' + 'canConstruct: ')
 print(canConstruct('abstractttttttttttt', ['abs', 'str', 'ct', 'tr', 'a', 't','tttt']))
+
+def countConstruct(target, wordBank):
+    if target == '':
+        return 1
+    count = 0
+    for word in wordBank:
+        if target.find(word) == 0:
+            suffix = target[len(word):]
+            numWaysForRest = countConstruct(suffix, wordBank) == 1
+            count += numWaysForRest
+    return count
+
+print('\n' + 'countConstruct: ')
+print(countConstruct('abcdef', ['abc','def','abd','cdef']))
+
+
+
