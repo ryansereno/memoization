@@ -1,13 +1,25 @@
 public class Memo {
-    public static void main(String[] args) {
-    int result = fib(9);
-    System.out.println(result);
-    }
     public static int fib(int n){
         if (n <= 2){
             return 1;
         } else {
             return fib(n-1) + fib(n-2);
-        } 
+        }
     }
+    public static int gT(int m, int n){
+        if (m == 1 && n == 1){
+            return 1;
+        }if (m == 0 || n == 0){
+            return 0;
+        }else{
+            return gT(m-1,n) + gT(m,n-1);
+        }
+    }
+    public static void main(String[] args) {
+    System.out.println("Fibinacci: ");
+    System.out.println(fib(9));
+    System.out.println("\n" + "gT: ");
+    System.out.println(gT(2,5));
+    }
+
 }
