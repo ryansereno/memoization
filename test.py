@@ -7,7 +7,7 @@ def fib(n, memo = {}):
     else:
         memo[n] = fib(n-1, memo) + fib(n-2, memo)
     return memo[n]
-print(fib(6))
+print(fib(5))
 print(fib(7))
 print(fib(8))
 print(fib(50))
@@ -119,15 +119,18 @@ def canConstruct(target, wordBank, memo = {}):
 print('\n' + 'canConstruct: ')
 print(canConstruct('abstractttttttttttt', ['abs', 'str', 'ct', 'tr', 'a', 't','tttt']))
 
-def countConstruct(target, wordBank):
+def countConstruct(target, wordBank, memo = {}):
+    if target in memo:
+        return memo
     if target == '':
         return 1
     count = 0
     for word in wordBank:
         if target.find(word) == 0:
             suffix = target[len(word):]
-            numWaysForRest = countConstruct(suffix, wordBank) == 1
+            numWaysForRest = countConstruct(suffix, wordBank, memo) == 1
             count += numWaysForRest
+    memo[target] = count
     return count
 
 print('\n' + 'countConstruct: ')
