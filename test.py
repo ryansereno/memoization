@@ -136,5 +136,19 @@ def countConstruct(target, wordBank, memo = {}):
 print('\n' + 'countConstruct: ')
 print(countConstruct('abcdef', ['abc','def','abd','cdef']))
 
+def allConstruct(target, wordBank):
+    count = []
+    if target == '':
+       count.append([])
+    for word in wordBank:
+        count2 = []
+        if target.find(word) == 0:
+            suffix = target[len(word):]
+            string = countConstruct(suffix, wordBank)
+            count2.append(string)
+            count.append(count2)
+    return count
 
+print("allConstruct: ")
+print(allConstruct('abstractttttttttttt', ['abs', 'str', 'ct', 'tr', 'a', 't','tttt']))
 
