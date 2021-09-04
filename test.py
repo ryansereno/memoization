@@ -145,10 +145,10 @@ def allConstruct(target, wordBank):
         if target.find(word) == 0:
             suffix = target[len(word):]
             string = countConstruct(suffix, wordBank)
-            count2.append(string)
-            count.append(count2)
+        count2.append(word)
+        count.append(count2)
     return count
 
 print("allConstruct: ")
 print(allConstruct('abstractttttttttttt', ['abs', 'str', 'ct', 'tr', 'a', 't','tttt']))
-
+print(allConstruct('abcdefg', ['abc','defg','ab','cdefg']))
