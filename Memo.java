@@ -42,6 +42,6 @@ public class Memo {
     System.out.println("factorial: ");
     System.out.println(factorial(7));
     System.out.println("canSum: ");
-    System.out.println(canSum(7,numbers[0] = 6; numbers[1] = 1;));
+    System.out.println(canSum(7,{6,1}));
     }
 }

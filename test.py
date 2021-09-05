@@ -137,18 +137,20 @@ print('\n' + 'countConstruct: ')
 print(countConstruct('abcdef', ['abc','def','abd','cdef']))
 
 def allConstruct(target, wordBank):
-    count = []
     if target == '':
-       count.append([])
+       return [[]]
+    count = []
     for word in wordBank:
-        count2 = []
         if target.find(word) == 0:
             suffix = target[len(word):]
-            string = countConstruct(suffix, wordBank)
-        count2.append(word)
-        count.append(count2)
+            string = allConstruct(suffix, wordBank)
+            for i in string:
+                i.insert(0,word)
+            count.append(string)
     return count
 
 print("allConstruct: ")
-print(allConstruct('abstractttttttttttt', ['abs', 'str', 'ct', 'tr', 'a', 't','tttt']))
+print(allConstruct('abstractttttttttttt', ['abs', 'str', 'ct', 'tr', 'a', 't','c']))
 print(allConstruct('abcdefg', ['abc','defg','ab','cdefg']))
+print(allConstruct('123456789', ['1234','56789','12','3456789']))
+
