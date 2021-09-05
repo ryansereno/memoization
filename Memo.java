@@ -22,17 +22,17 @@ public class Memo {
             return n * factorial(n-1);
         }
     }
-    public static Bool canSum(int targetSum, int numbers){
+    public static boolean canSum(int targetSum, int[] numbers){
         if (targetSum == 0){
-            return True;
+            return true;
         }if (targetSum < 0){
-            return False;
-        }for (int i in numbers;){
-            remainder = targetSum - i;
-            if (canSum(remainder, numbers) == True){
-                return True;
+            return false;
+        }for (int i : numbers){
+            int remainder = targetSum - i;
+            if (canSum(remainder, numbers) == true){
+                return true;
             }
-        }return False;
+        }return false;
     }
     public static void main(String[] args) {
     System.out.println("Fibinacci: ");
@@ -41,5 +41,7 @@ public class Memo {
     System.out.println(gT(2,5));
     System.out.println("factorial: ");
     System.out.println(factorial(7));
+    System.out.println("canSum: ");
+    System.out.println(canSum(7,numbers[0] = 6; numbers[1] = 1;));
     }
 }
