@@ -156,3 +156,18 @@ print(allConstruct('abstractttttttttttt', ['abs', 'str', 'ct', 'tr', 'a', 't','c
 print(allConstruct('abcdefg', ['abc','defg','ab','cdefg']))
 print(allConstruct('123456789', ['1234','56789','12','3456789','1','2','3','4','5','6','7','8','9']))
 
+def fibSeq(n):
+    if n == 0:
+        return [0]
+    arr = []
+    arr = [0 for i in range(n+1)]
+    if len(arr) >= 2:
+        arr[1] = 1
+        for i in arr:
+            try:
+                arr[arr.index(i) + 1] + i
+                arr[arr.index(i) + 2] + i
+    print(arr)
+print("fibSeq: ")
+print(fibSeq(6))
+
