@@ -160,14 +160,15 @@ def fibSeq(n):
     if n == 0:
         return [0]
     arr = []
-    arr = [0 for i in range(n+1)]
-    if len(arr) >= 2:
-        arr[1] = 1
-        for i in arr:
-            try:
-                arr[arr.index(i) + 1] + i
-                arr[arr.index(i) + 2] + i
+    arr = [0] * (n+1)
+    arr[1] = 1
+    for i in range(len(arr)):
+        try:
+           arr[i + 1] += arr[i]
+           arr[i + 2] += arr[i]
+        except:
+            return arr
     print(arr)
 print("fibSeq: ")
-print(fibSeq(6))
+print(fibSeq(3))
 
