@@ -172,3 +172,10 @@ def fibSeq(n):
 print("fibSeq: ")
 print(fibSeq(3))
 
+def gridTrav(m,n):
+    arr = []
+    arr = [0] * (m+1)
+    print(arr)
+
+print("gridTrav: ")
+print(gridTrav(5,3))
