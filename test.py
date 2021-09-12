@@ -184,6 +184,5 @@ def gridTrav(m,n):
             if i+1<=m:
                 arr[i+1][j] += current
     print(arr)
-
 print("gridTrav: ")
 print(gridTrav(5,3))
