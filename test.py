@@ -174,7 +174,15 @@ print(fibSeq(3))
 
 def gridTrav(m,n):
     arr = []
-    arr = [0] * (m+1)
+    arr = [[0]*(m+1) for i in range(n+1)] #don't use arr = [[0]*(m+1)]*(n+1)
+    arr[1][1] = 1
+    for i in range(0,(m+1)):
+        for j in range(0,(n+1)):
+            current = arr[i][j]
+            if j+1<=n:
+                arr[i][j+1] += current
+            if i+1<=m:
+                arr[i+1][j] += current
     print(arr)
 
 print("gridTrav: ")
