@@ -179,10 +179,12 @@ def gridTrav(m,n):
     for i in range(0,(m+1)):
         for j in range(0,(n+1)):
             current = arr[i][j]
+            print(f'current: {current}')
+            print(arr)
             if j+1<=n:
-                arr[i][j+1] += current
+                 arr[i][j+1] += current
             if i+1<=m:
-                arr[i+1][j] += current
+                 arr[i+1][j] += current
     print(arr)
 print("gridTrav: ")
-print(gridTrav(5,3))
+print(gridTrav(3,5))
