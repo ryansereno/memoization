@@ -16,7 +16,7 @@ while i <= 100:
             print("fizzbuzz")
         else:
             print("fizz")
-    if i % 5 == 0:
+    elif i % 5 == 0:
         print("buzz")
     else:
         print(i)
